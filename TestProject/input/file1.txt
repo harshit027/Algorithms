@@ -1,0 +1,11 @@
+The Map/Reduce framework consists of a single master JobTracker and one slave
+TaskTracker per cluster-node. The master is responsible for scheduling the jobs'
+component tasks on the slaves, monitoring them and re-executing the failed tasks. The slaves
+execute the tasks as directed by the master.
+Minimally, applications specify the input/output locations and supply map and reduce
+functions via implementations of appropriate interfaces and/or abstract-classes. These, and
+other job parameters, comprise the job configuration. The Hadoop job client then submits the
+job (jar/executable etc.) and configuration to the JobTracker which then assumes the
+responsibility of distributing the software/configuration to the slaves, scheduling tasks and
+monitoring them, providing status and diagnostic information to the job-client.
+Although the Hadoop framework is implemented in JavaTM, Map/Reduce applications need
