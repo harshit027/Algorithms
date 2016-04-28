@@ -1,0 +1,15 @@
+package primitive_types;
+
+public class ParityChecker {
+
+	public static int checkParity(int n){
+		int parity=0;
+		for(int i=0;i<64;i++){
+			if((n&1) == 1){
+				parity++;
+			}
+			n=n>>1;
+		}
+		return parity%2;
+	}
+}

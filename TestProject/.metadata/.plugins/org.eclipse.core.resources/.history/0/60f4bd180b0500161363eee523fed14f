@@ -1,0 +1,49 @@
+package primitive_types;
+
+public class Main {
+
+	public static void main(String args[]){
+		char a[]={'a','b','c'};
+		powerSet(a,3);
+	}
+	
+	public static int checkParity(int n){
+		int parity=0;
+		for(int i=0;i<64;i++){
+			if((n&1) == 1){
+				parity++;
+			}
+			n=n>>1;
+		}
+		return parity%2;
+	}
+	public static int swapBits(int n, int i, int j){
+		if(((n>>i) & 1) != ((n>>j)&1)){
+			n = n^ ((1<<i) | (1<<j));
+		}
+		return n;
+	}
+	public static int nextBiggestNumber(int n){
+		int x=-1;
+		for(int i=0;i<64;i++){
+			if(((n>>i) & 1) != ((n>>(i+1)) & 1)){
+				{
+					x = swapBits(n,i,i+1);
+					break;
+				}
+			}
+		}
+		return x;
+	}
+	
+	public static void powerSet(char [] a, int size){
+		int powerSetSize = (int) Math.pow(2, size);
+		for(int i=0;i<powerSetSize;i++){
+			for(int j=0;j<size;j++){
+				if(((i>>j) & 1)==1)
+					System.out.print(a[j]+",");
+			}
+			System.out.println();
+		}
+	}
+}

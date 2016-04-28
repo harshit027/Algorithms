@@ -1,0 +1,5 @@
+package primitive_types;
+
+public class ParityChecker {
+
+}

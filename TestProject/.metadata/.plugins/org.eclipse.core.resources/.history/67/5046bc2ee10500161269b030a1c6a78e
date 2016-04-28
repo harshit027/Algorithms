@@ -1,0 +1,25 @@
+package others;
+
+public class MaximumVolume {
+	public static void main(String args[]){
+		int[] a = {3,6,4,8,3,6,7,4,3};
+		System.out.println(getMaxVolume(a));
+	}
+	public static int getMaxVolume(int [] a){
+		int v=0;
+		int max=0;
+		int start = a[0];
+		for(int i=0;i<a.length;i++){
+			if(a[i]>=start){
+				if(v>max)
+					max=v;
+				v=0;
+				start=a[i];
+			}
+			else{
+				v=
+			}
+		}
+		return v;
+	}
+}

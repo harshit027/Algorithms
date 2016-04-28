@@ -1,0 +1,32 @@
+package others;
+
+public class CheckPermutation {
+
+	public static void main(String args[]){
+		System.out.println(compress(aabcccccaaa));
+	}
+	public static boolean isPermutation(String s1, String s2){
+		String s=s1+s2;
+		char c= s.charAt(0);
+		for(int i=1;i<s.length();i++){
+			c^=s.charAt(i);
+		}
+		return (c==0)?true:false;
+	}
+	
+	public static String compress(String s){
+		StringBuilder str= new StringBuilder();
+		char c= s.charAt(0);
+		int count = 0; 
+		for(int i=1;i<s.length();i++){
+			if(s.charAt(i) != c){
+				str.append(c+count);
+				c=s.charAt(i);
+				count=0;
+			}
+			else 
+				count++;
+			
+		}
+	}
+}
