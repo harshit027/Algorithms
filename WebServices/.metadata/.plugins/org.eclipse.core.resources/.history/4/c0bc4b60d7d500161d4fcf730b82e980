@@ -1,0 +1,5 @@
+package com.mywebservice.temperature;
+
+public class CtoF {
+	
+}

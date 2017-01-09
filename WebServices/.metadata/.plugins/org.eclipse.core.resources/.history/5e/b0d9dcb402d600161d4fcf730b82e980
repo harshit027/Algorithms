@@ -1,0 +1,5 @@
+package com.mywebservice.calculator;
+
+public class SimpleCalculator {
+
+}

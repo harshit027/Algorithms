@@ -1,0 +1,27 @@
+package com.mywebservice.calculator;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+@Path("/simplecalculator")
+public class SimpleCalculator 
+{
+	@GET
+	@Produces("application/xml")
+	@Path("/{operation}/{a}/{b}")
+	public String executeOperation(@PathParam("op") String operation, @PathParam("a") double a, @PathParam("b") double b)
+	{
+		String response = null;
+		double result = a+b;
+		response = "<simplecalculator>" +
+						"<operation>"+
+							"<name>"+operation+"</name>"+
+							"<result>"+result +"</result>"+
+						"</operation>"+
+					"</simplecalculator>";
+		return response;
+	}
+	
+}
